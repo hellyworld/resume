@@ -25,7 +25,7 @@ SECRET_KEY = '9!miyazmgm@9nw@7#yw*y1s&tyx-sao%4+jgjh_x9)vzgywmsu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.pythonanywhere.com']
 
 
 # Application definition
@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third party libraries
+    'django_wysiwyg',
+    'ckeditor',
+    # local apps
     'curriculum',
 ]
 
@@ -126,3 +130,14 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'media_root')
+
+# Settings for WYSIWYG from description - admin
+DJANGO_WYSIWYG_FLAVOR = "ckeditor"
+
+# Settings for rich HTML editor for description - admin
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+}

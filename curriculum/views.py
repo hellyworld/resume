@@ -1,3 +1,12 @@
 from django.shortcuts import render
+from curriculum.models import Experience, Education
 
-# Create your views here.
+
+def home(request):
+    all_experiences = Experience.objects.order_by("id").reverse()
+    all_educations = Education.objects.order_by("id").reverse()
+    context = {
+        'all_experiences': all_experiences,
+        'all_educations': all_educations,
+    }
+    return render(request, 'base.html', context)
