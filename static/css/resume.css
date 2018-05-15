@@ -13,6 +13,12 @@ nav {
     z-index: 10;
 }
 
+
+.nav-link {
+    display: block;
+    padding: .5rem 0.8rem;
+}
+
 .navbar-dark .navbar-toggler {
     border-color: #007bff !important;
 }
