@@ -21,6 +21,14 @@ nav {
     border-color: #007bff !important;
 }
 
+.navbar-right {
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
 .jumbotron {
     padding: 2rem 2rem;
     margin-bottom: 0rem;

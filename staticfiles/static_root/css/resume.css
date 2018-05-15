@@ -13,18 +13,19 @@ nav {
     z-index: 10;
 }
 
+.navbar-dark .navbar-toggler {
+    border-color: #007bff !important;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: #007bff !important;
+}
+
 .jumbotron {
     padding: 2rem 2rem;
     margin-bottom: 0rem;
     color: #e9ecef;
     background-color: #292b2c;
-    border-radius: 0.2rem;
-}
-
-div.category {
-    padding: 1rem 3rem;
-    color: #292b2c;
-    background-color: #e9ecef;
     border-radius: 0.2rem;
 }
 
@@ -70,8 +71,8 @@ div.category {
         margin-bottom: 2rem !important;
 }
 
-.fas, .fas, .FVIM {
-    color:#007bff;
+.fas, .fab, .FVIM {
+    color: #007bff;
 }
 
 .img-thumbnail {
