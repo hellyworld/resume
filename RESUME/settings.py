@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # third party libraries
-    'django_wysiwyg',
     'ckeditor',
     # local apps
     'curriculum',
@@ -130,9 +129,6 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'media_root')
-
-# Settings for WYSIWYG from description - admin
-DJANGO_WYSIWYG_FLAVOR = "ckeditor"
 
 # Settings for rich HTML editor for description - admin
 CKEDITOR_UPLOAD_PATH = "uploads/"
