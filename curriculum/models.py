@@ -18,3 +18,13 @@ class Education(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     description = RichTextField()
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+
+
+class Skill(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.PROTECT)
+    name = models.CharField(max_length=100, blank=True, null=True)
+    level = models.CharField(max_length=50)
