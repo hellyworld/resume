@@ -11,7 +11,13 @@
             </div>
             <div class="col-md-4">
                 <h6 class="text-sm-left text-md-right text-muted">{{ education.location }}</h6>
-                <h6 class="text-sm-left text-md-right text-muted">{{ education.start_date }} - {{ education.end_date }}</h6>
+                <h6 class="text-sm-left text-md-right text-muted">{{ education.start_date|date:'M Y' }} -
+                    {% if education.end_date is null %}
+                        Present
+                    {% else %}
+                        {{ education.end_date|date:'M Y'  }}
+                    {% endif %}
+                </h6>
             </div>
         </div>
         <a data-toggle="collapse" href="#multi_collapse_education_{{ education.id }}">

@@ -3,28 +3,31 @@ from ckeditor.fields import RichTextField
 
 
 class Experience(models.Model):
-    company = models.CharField(max_length=50, blank=True, null=True)
+    company = models.CharField(max_length=50)
     position = models.CharField(max_length=50)
     location = models.CharField(max_length=50)
     start_date = models.DateField()
-    end_date = models.DateField()
+    end_date = models.DateField(blank=True, null=True)
     description = RichTextField()
 
 
 class Education(models.Model):
-    school = models.CharField(max_length=100, blank=True, null=True)
+    school = models.CharField(max_length=100)
     degree = models.CharField(max_length=50)
     location = models.CharField(max_length=50)
     start_date = models.DateField()
-    end_date = models.DateField()
+    end_date = models.DateField(blank=True, null=True)
     description = RichTextField()
 
 
-class Category(models.Model):
-    name = models.CharField(max_length=50)
-
-
 class Skill(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.PROTECT)
-    name = models.CharField(max_length=100, blank=True, null=True)
-    level = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
+    level = models.IntegerField()
+    category = models.ForeignKey('Category', on_delete=models.SET_NULL, blank=True, null=True)
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name

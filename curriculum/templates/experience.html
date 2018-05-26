@@ -11,7 +11,9 @@
             </div>
             <div class="col-md-4">
                 <h6 class="text-sm-left text-md-right text-muted">{{ experience.location }}</h6>
-                <h6 class="text-sm-left text-md-right text-muted">{{ experience.start_date }} - {{ experience.end_date }}</h6>
+                <h6 class="text-sm-left text-md-right text-muted">
+                    {{ experience.start_date|date:'M Y'  }} - {{ experience.end_date|date:'M Y'  }}
+                </h6>
             </div>
         </div>
         <a data-toggle="collapse" href="#multi_collapse_experiece_{{ experience.id }}">
