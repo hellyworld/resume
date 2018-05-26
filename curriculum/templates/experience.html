@@ -11,8 +11,12 @@
             </div>
             <div class="col-md-4">
                 <h6 class="text-sm-left text-md-right text-muted">{{ experience.location }}</h6>
-                <h6 class="text-sm-left text-md-right text-muted">
-                    {{ experience.start_date|date:'M Y'  }} - {{ experience.end_date|date:'M Y'  }}
+                <h6 class="text-sm-left text-md-right text-muted">{{ experience.start_date|date:'M Y'}} -
+                    {% if experience.end_date is null %}
+                        Present
+                    {% else %}
+                        {{ experience.end_date|date:'M Y'}}
+                    {% endif %}
                 </h6>
             </div>
         </div>
