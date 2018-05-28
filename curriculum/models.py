@@ -10,6 +10,9 @@ class Experience(models.Model):
     end_date = models.DateField(blank=True, null=True)
     description = RichTextField()
 
+    def __str__(self):
+        return self.company
+
 
 class Education(models.Model):
     school = models.CharField(max_length=100)
@@ -19,11 +22,17 @@ class Education(models.Model):
     end_date = models.DateField(blank=True, null=True)
     description = RichTextField()
 
+    def __str__(self):
+        return self.school
+
 
 class Skill(models.Model):
     name = models.CharField(max_length=100)
     level = models.IntegerField()
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Category(models.Model):
