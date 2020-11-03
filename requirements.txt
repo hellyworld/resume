@@ -2,5 +2,5 @@ Django==2.2.1
 django-ckeditor==5.7.1
 django-js-asset==1.2.2
 django-wysiwyg==0.8.0
-pytz==2019.1
+pytz==2020.4
 sqlparse==0.3.0
